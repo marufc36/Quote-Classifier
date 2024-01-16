@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #add8e6; /* Light blue background */
+            text-align: center;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"],
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Adjusted margin-top */
+        }
+
+        button {
+            margin-left: 10px;
+        }
+
+        h2,
+        h3,
+        p {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        p {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Quote Classifier</h2>
+        <form action="/" method="post">
+            <input type="text" id="text" name="text" placeholder="Enter your quote">
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if prediction %}
+            <h3 id="quoteOutput">Quote: {{ prediction.quote }}</h3>
+            {% if prediction.labels %}
+                <h3>Tags:</h3>
+                <ul>
+                    {% for label in prediction.labels %}
+                        <li>{{ label }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No tags available.</p>
+            {% endif %}
+        {% endif %}
+
+        <!-- Add Clean button with onclick event -->
+        <button onclick="cleanQuote()">Clean</button>
+    </div>
+
+    <script>
+        function cleanQuote() {
+            // Set the quote and tags to empty strings
+            document.getElementById('quoteOutput').innerHTML = 'Quote:';
+            // If you have an id for the tags element, you can reset it too
+            // document.getElementById('tagsOutput').innerHTML = 'Tags:';
+            document.querySelector('ul').innerHTML = ''; // Clear the tags
+        }
+    </script>
+</body>
+</html>
