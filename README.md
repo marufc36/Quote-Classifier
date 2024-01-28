@@ -53,8 +53,16 @@ The quote classifier model is trained using distilroberta-base that maps quotes 
 ![image](https://github.com/marufc36/Quote-Classifier/assets/151602012/daff2c1c-b17d-48bc-8c36-8ea78f46e68f)
 
 
+https://huggingface.co/spaces/mmchowdhury/Quote_Classifier
+
+
+
+
+
 ***Flask App***
 
 ![image](https://github.com/marufc36/Quote-Classifier/assets/151602012/e4f3293b-06aa-4c06-b58b-4efa772cb987)
+
+
 
 
