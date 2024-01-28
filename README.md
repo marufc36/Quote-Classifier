@@ -1,4 +1,4 @@
-# Quote-Classifier
+# Quote Classifier
 
 
 ## Overview
