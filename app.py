@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from gradio_client import Client
 
 app = Flask(__name__)
-client = Client("https://mmchowdhury-quote-classifier.hf.space/--replicas/tklcl/")
+client = Client("https://mmchowdhury-quote-classifier.hf.space/--replicas/6oekh/")
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
